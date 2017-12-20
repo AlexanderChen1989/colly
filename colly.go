@@ -291,7 +291,7 @@ func (c *Collector) scrape(u, method string, depth int, requestData io.Reader, c
 	}
 
 	if c.SplashURL != "" {
-		if reqURL, e := url.Parse(c.SplashURL); e != nil {
+		if reqURL, e := url.Parse(c.SplashURL); e == nil {
 			q := reqURL.Query()
 			q.Set("url", parsedURL.String())
 			reqURL.RawQuery = q.Encode()
