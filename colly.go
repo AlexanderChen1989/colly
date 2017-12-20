@@ -292,11 +292,11 @@ func (c *Collector) scrape(u, method string, depth int, requestData io.Reader, c
 
 	reqURL := parsedURL
 	if c.SplashURL != "" {
-		var e error
-		if reqURL, e = url.Parse(c.SplashURL); e == nil {
+		if u, e := url.Parse(c.SplashURL); e == nil {
 			q := reqURL.Query()
 			q.Set("url", parsedURL.String())
-			reqURL.RawQuery = q.Encode()
+			u.RawQuery = q.Encode()
+			reqURL = u
 		}
 	}
 
