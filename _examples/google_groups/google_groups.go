@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/gocolly/colly"
+	"github.com/AlexanderChen1989/colly"
 )
 
 // Mail is the container of a single e-mail

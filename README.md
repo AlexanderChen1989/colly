@@ -6,10 +6,10 @@ Colly provides a clean interface to write any kind of crawler/scraper/spider.
 
 With Colly you can easily extract structured data from websites, which can be used for a wide range of applications, like data mining, data processing or archiving.
 
-[![GoDoc](https://godoc.org/github.com/gocolly/colly?status.svg)](https://godoc.org/github.com/gocolly/colly)
+[![GoDoc](https://godoc.org/github.com/AlexanderChen1989/colly?status.svg)](https://godoc.org/github.com/AlexanderChen1989/colly)
 [![Backers on Open Collective](https://opencollective.com/colly/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/colly/sponsors/badge.svg)](#sponsors) [![build status](https://img.shields.io/travis/gocolly/colly/master.svg?style=flat-square)](https://travis-ci.org/gocolly/colly)
 [![report card](https://img.shields.io/badge/report%20card-a%2B-ff3333.svg?style=flat-square)](http://goreportcard.com/report/gocolly/colly)
-[![view examples](https://img.shields.io/badge/learn%20by-examples-0077b3.svg?style=flat-square)](https://github.com/gocolly/colly/tree/master/_examples)
+[![view examples](https://img.shields.io/badge/learn%20by-examples-0077b3.svg?style=flat-square)](https://github.com/AlexanderChen1989/colly/tree/master/_examples)
 [![Code Coverage](https://img.shields.io/codecov/c/github/gocolly/colly/master.svg)](https://codecov.io/github/gocolly/colly?branch=master)
 
 ## Features
@@ -43,19 +43,19 @@ func main() {
 }
 ```
 
-See [examples folder](https://github.com/gocolly/colly/tree/master/_examples) for more detailed examples.
+See [examples folder](https://github.com/AlexanderChen1989/colly/tree/master/_examples) for more detailed examples.
 
 
 ## Installation
 
 ```
-go get -u github.com/gocolly/colly/...
+go get -u github.com/AlexanderChen1989/colly/...
 ```
 
 
 ## Bugs
 
-Bugs or suggestions? Visit the [issue tracker](https://github.com/gocolly/colly/issues) or join `#colly` on freenode
+Bugs or suggestions? Visit the [issue tracker](https://github.com/AlexanderChen1989/colly/issues) or join `#colly` on freenode
 
 
 ## Other Projects Using Colly
@@ -69,7 +69,7 @@ If you are using Colly in a project please send a pull request to add it to the 
 ## Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
-<a href="https://github.com/gocolly/colly/graphs/contributors"><img src="https://opencollective.com/colly/contributors.svg?width=890" /></a>
+<a href="https://github.com/AlexanderChen1989/colly/graphs/contributors"><img src="https://opencollective.com/colly/contributors.svg?width=890" /></a>
 
 
 ## Backers

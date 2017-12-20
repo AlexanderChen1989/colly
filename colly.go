@@ -20,7 +20,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/gocolly/colly/debug"
+	"github.com/AlexanderChen1989/colly/debug"
 
 	"google.golang.org/appengine"
 	"google.golang.org/appengine/urlfetch"
@@ -35,6 +35,8 @@ import (
 
 // Collector provides the scraper instance for a scraping job
 type Collector struct {
+	// Splash
+	SplashURL string
 	// UserAgent is the User-Agent string used by HTTP requests
 	UserAgent string
 	// MaxDepth limits the recursion depth of visited URLs.
@@ -189,7 +191,7 @@ func NewContext() *Context {
 // Init initializes the Collector's private variables and sets default
 // configuration for the Collector
 func (c *Collector) Init() {
-	c.UserAgent = "colly - https://github.com/gocolly/colly"
+	c.UserAgent = "colly - https://github.com/AlexanderChen1989/colly"
 	c.MaxDepth = 0
 	c.visitedURLs = make(map[uint64]bool)
 	c.MaxBodySize = 10 * 1024 * 1024
@@ -287,6 +289,16 @@ func (c *Collector) scrape(u, method string, depth int, requestData io.Reader, c
 			return err
 		}
 	}
+
+	if c.SplashURL != "" {
+		if reqURL, e := url.Parse(c.SplashURL); e != nil {
+			q := reqURL.Query()
+			q.Set("url", parsedURL.String())
+			reqURL.RawQuery = q.Encode()
+			parsedURL = reqURL
+		}
+	}
+
 	req, err := http.NewRequest(method, parsedURL.String(), requestData)
 	if err != nil {
 		return err
