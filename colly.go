@@ -290,16 +290,16 @@ func (c *Collector) scrape(u, method string, depth int, requestData io.Reader, c
 		}
 	}
 
+	reqURL := parsedURL
 	if c.SplashURL != "" {
 		if reqURL, e := url.Parse(c.SplashURL); e == nil {
 			q := reqURL.Query()
 			q.Set("url", parsedURL.String())
 			reqURL.RawQuery = q.Encode()
-			parsedURL = reqURL
 		}
 	}
 
-	req, err := http.NewRequest(method, parsedURL.String(), requestData)
+	req, err := http.NewRequest(method, reqURL.String(), requestData)
 	if err != nil {
 		return err
 	}
